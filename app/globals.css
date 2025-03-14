@@ -9,7 +9,7 @@ body {
 }
 @layer components {
   .btn {
-    @apply py-2 px-11 h-[60px] bg-[#29BDBF] rounded-sm border-none text-white;
+    @apply py-4 px-11 h-[60px] bg-[#29BDBF] rounded-sm border-none text-white;
   }
   .card {
     @apply py-[50px] ps-[30px] pr-[50px];

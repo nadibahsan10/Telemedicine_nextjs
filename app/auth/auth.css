@@ -1,0 +1,9 @@
+@import "tailwindcss";
+@layer base {
+  input[type="text"],
+  input[type="password"],
+  input[type="phone"],
+  input[type="email"] {
+    @apply border-0 border-b-3 w-[300px] border-gray-400 focus:placeholder:text-[#1965A3] text-gray-700 focus:text-[#1965A3] focus:outline-none transition duration-300 relative focus:border-[#1965A3] px-2 py-2;
+  }
+}

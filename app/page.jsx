@@ -1,7 +1,12 @@
 import Image from "next/image";
 import Link from "next/link";
+import { redirect } from "next/navigation";
 
 export default async function Home() {
+  const isLoggedIn = true;
+  if (isLoggedIn) {
+    redirect("/dashboard");
+  }
   const res = await fetch("https://dummyjson.com/products");
   const data = await res.json();
 
@@ -9,7 +14,7 @@ export default async function Home() {
   return (
     <>
       <div className="absolute top-0 w-full">
-        <nav className="py-5  mx-auto  w-4/6 container h-[80px]">
+        <nav className="py-5  mx-auto  w-4/6 container ">
           <div className="flex justify-between items-center">
             <img src="./next.svg" height={60} width={100} />
             <div className="flex gap-10 items-center">
@@ -35,8 +40,10 @@ export default async function Home() {
                   </Link>
                 </li>
               </ul>
-              <button className="btn">Login</button>
             </div>
+            <Link href="/auth/login" className="btn">
+              Login
+            </Link>
           </div>
         </nav>
       </div>
@@ -53,7 +60,9 @@ export default async function Home() {
                 industry. Lorem Ipsum has been the industry's standard dummy
                 text ever since the 1500s,
               </p>
-              <button className="btn">Get Started</button>
+              <Link href="/auth/register" className="btn">
+                Get Started
+              </Link>
             </div>
             <div className=" text-white">
               <Image
