@@ -1,0 +1,17 @@
+@import "tailwindcss";
+
+@layer base {
+  a {
+    @apply text-white hover:bg-white hover:text-black;
+  }
+}
+@layer components {
+  .active {
+    @apply bg-white text-[#386BF6];
+  }
+}
+@layer utilities {
+  .container {
+    @apply mx-auto px-7;
+  }
+}
